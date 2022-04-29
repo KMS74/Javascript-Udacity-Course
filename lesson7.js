@@ -22,34 +22,36 @@ var umbrella = {
     }
   },
 };
+console.log(umbrella);
 
 const breakfast = {
   name: "The Lumberjack",
   price: 9.95,
   ingredients: ["eggs", "sausage", "toast", "hashbrowns", "pancakes"],
 };
-console.log(breakfast);
+console.log(breakfast.name);
+console.log(breakfast["price"]);
 
 var savingsAccount = {
-  balance: 1000,
+  balance: 2000,
   interestRatePercent: 1,
   deposit: function addMoney(amount) {
     if (amount > 0) {
-      savingsAccount.balance += amount;
+      this.balance += amount;
     }
   },
   withdraw: function removeMoney(amount) {
-    var verifyBalance = savingsAccount.balance - amount;
+    var verifyBalance = this.balance - amount;
     if (amount > 0 && verifyBalance >= 0) {
-      savingsAccount.balance -= amount;
+      this.balance -= amount;
     }
   },
   printAccountSummary: function () {
     return (
       "Welcome!\nYour balance is currently $" +
-      savingsAccount.balance +
+      this.balance +
       " and your interest rate is " +
-      savingsAccount.interestRatePercent +
+      this.interestRatePercent +
       "%."
     );
   },
@@ -61,22 +63,27 @@ const facebookProfile = {
   friends: 700,
   messages: ["mesg1", "mesg2", "mesg3"],
   postMessage: function (msg) {
-    facebookProfile.messages.push(msg);
+    this.messages.push(msg);
   },
   deleteMessage: function (index) {
-    facebookProfile.messages.splice(index, 1);
+    this.messages.splice(index, 1);
   },
   addFriend: function () {
-    facebookProfile.friends++;
+    this.friends++;
   },
   removeFriend: function () {
-    if (facebookProfile.friends > 0) {
-      facebookProfile.friends--;
+    if (this.friends > 0) {
+      this.friends--;
     }
   },
 };
 
-donuts = [
+facebookProfile.postMessage("Hello and welcome");
+facebookProfile.addFriend();
+facebookProfile.deleteMessage(1);
+console.log(facebookProfile);
+
+var donuts = [
   { type: "Jelly", cost: 1.22 },
   { type: "Chocolate", cost: 2.45 },
   { type: "Cider", cost: 1.59 },
@@ -86,3 +93,5 @@ donuts = [
 donuts.forEach((element) => {
   console.log(`${element.type} donuts cost $${element.cost} each`);
 });
+
+// Ending of The Course

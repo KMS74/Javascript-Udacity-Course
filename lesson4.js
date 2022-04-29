@@ -70,7 +70,7 @@ for (var x = 9; x >= 1; x--) {
 // Quiz: Factorials;
 var num = 4; // !4 =  4*3*2*1
 var factorial = 1; // intial value
-for (var x = 1; x <= num; x++) {
+for (let x = 1; x <= num; x++) {
   factorial = factorial * x;
   //  1=1*1
   //  2=1*2

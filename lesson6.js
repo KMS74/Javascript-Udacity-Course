@@ -43,7 +43,7 @@ console.log(prices);
 console.log(prices.length); // length = last index+1 = 100 'all hole gaps are empaty items'
 
 // You can use the push() method to add elements to the end of an array.
-//  returns the length of the array after an element has been
+//  returns the length of the array after an element has been added
 var newLength = donuts.push("powdered"); // pushes "powdered" onto the end of the `donuts` array
 console.log(newLength);
 

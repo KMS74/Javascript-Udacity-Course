@@ -157,7 +157,7 @@ var shirtLength = 30; // size L (large)
 var shirtSleeve = 8.71; // size L (large
 
 if (
-  shirtLength >= 18 &&
+  shirtWidth >= 18 &&
   shirtWidth < 20 &&
   shirtLength >= 28 &&
   shirtLength < 29 &&
